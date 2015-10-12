@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:pre="http://jena.hpl.hp.com/prefix#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+>
+  <rdf:Description rdf:about="http://oanaureche.com/prefix#Joseph">
+    <pre:father rdf:resource="http://oanaureche.com/prefix#Mary"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://oanaureche.com/prefix#John">
+    <pre:brother rdf:resource="http://oanaureche.com/prefix#Joseph"/>
+  </rdf:Description>
+</rdf:RDF>

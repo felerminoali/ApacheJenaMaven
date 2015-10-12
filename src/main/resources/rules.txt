@@ -1,0 +1,9 @@
+@prefix drc: <http://www.codesupreme.com/#>.
+
+[rule1: (?u drc:loves drc:rollo ) -> (?u drc:loves drc:food)]
+[rule2: (?u drc:loves drc:food ) -> (?u drc:loves drc:mustard)]
+[rule3: (?x drc:loves drc:mustard) -> print('Mustard World') (?x a drc:MustardEatingPerson)]
+
+# rules must use rdf:type rather than n3 shorthand "a"
+[rule4: (?x rdf:type drc:Student) -> (?x rdf:type drc:Academic) ] 
+[rule5: (?x rdf:type drc:Person)  -> print(?x, ' is a Person') ] 
