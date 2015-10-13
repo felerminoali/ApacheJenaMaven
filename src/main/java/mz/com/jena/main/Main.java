@@ -13,6 +13,7 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.FileManager;
 //import org.apache.jena.
 
@@ -26,10 +27,13 @@ public class Main {
 
 //        FileManager.get().addLocatorClassLoader(Main.class.getClassLoader());
 //        Model model = FileManager.get().loadModel("src/main/resources/data.rdf");
-//
-//        model.write(System.out, "TURTLE");
-        sparqTest();
-        
+        Model model = ModelFactory.createDefaultModel();
+        final String URL = "src/main/webapp/index.html";
+        model.read(URL, "HTML");
+
+        model.write(System.out, "TURTLE");
+//        sparqTest();
+
     }
 
     public static void sparqTest() {
@@ -41,10 +45,10 @@ public class Main {
                 + "PREFIX foaf: <http://xmlns.com/foaf/0.1/>"
                 + "SELECT * WHERE {"
                 + " ?person foaf:name ?x ."
-//                + "FILTER(?x = \"Charles\")"
-//                + " ?person foaf:knows ?person2 ."
-//                + " ?person2 foaf:name ?y ."
-//                + "FILTER(?y = \"Charles\")"
+                //                + "FILTER(?x = \"Charles\")"
+                //                + " ?person foaf:knows ?person2 ."
+                //                + " ?person2 foaf:name ?y ."
+                //                + "FILTER(?y = \"Charles\")"
                 + "}";
 
         Query query = QueryFactory.create(queryString);

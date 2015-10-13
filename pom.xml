@@ -34,6 +34,13 @@
             <artifactId>jena-arq</artifactId>
             <version>3.0.0</version>
         </dependency>
+        
+        <dependency>
+            <groupId>net.rootdev</groupId>
+            <artifactId>java-rdfa</artifactId>
+            <version>0.4.2</version>
+        </dependency>
+
 
     </dependencies>
 

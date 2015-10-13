@@ -15,7 +15,9 @@ import org.apache.jena.query.QuerySolution;
 import org.apache.jena.query.ResultSet;
 import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.util.FileManager;
+//import net.rootdev.javardfa.jena.RDFaReader.
 
 /**
  *
@@ -30,7 +32,16 @@ public class RDFLoader {
 //            Model model = FileManager.get().loadModel("src/main/resources/data.rdf");
             Model model = FileManager.get().loadModel("http://localhost:8080/mavenproject2/data.rdf");
             
-
+//            Model model = ModelFactory.createDefaultModel();
+//            final String uri = "http://localhost:8080/mavenproject2/data.rdf";
+//            model.read(uri);
+//            
+//            Class.forName("net.rootdev.javardfa.jena.RDFaReader"); 
+//            Model model = ModelFactory.createDefaultModel();
+//            model.read("http://localhost:8080/mavenproject2/index.html", "HTML"); 
+            
+            model.write(System.out, "TURTLE");
+            
             Query query = QueryFactory.create(queryString);
             QueryExecution qexec = QueryExecutionFactory.create(query, model);
             try {
